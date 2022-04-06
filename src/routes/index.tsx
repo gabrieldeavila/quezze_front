@@ -1,14 +1,13 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Posts from "../Pages/Posts";
-import Navbar from "./../components/Navbar/index";
+import NotFound from "./../Pages/NotFound/index";
 
 export default function RoutesWrapper() {
   return (
     <Router>
-      <Navbar />
       <Routes>
-        <Route path="/" element={<Posts />} />
-        <Route path="/new" element={<Posts />} />
+        {/* <Route path="/" element={<Posts />} /> */}
+        {/* <Route path="/new" element={<Posts />} /> */}
+        <Route element={<NotFound />} />
       </Routes>
     </Router>
   );
