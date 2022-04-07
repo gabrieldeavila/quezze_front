@@ -7,7 +7,7 @@ export default function RoutesWrapper() {
       <Routes>
         {/* <Route path="/" element={<Posts />} /> */}
         {/* <Route path="/new" element={<Posts />} /> */}
-        <Route element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
