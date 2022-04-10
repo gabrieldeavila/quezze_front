@@ -4,11 +4,21 @@ import App from "./App";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 import store from "./redux/store/";
-import "./assets/css/index.min.css";
+import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
+
+console.log(reset);
+const GlobalStyle = createGlobalStyle`
+  ${reset}
+  * {
+    font-family: 'Montserrat', sans-serif !important
+  }
+`;
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+      <GlobalStyle />
       <App />
     </Provider>
   </React.StrictMode>,
