@@ -7,7 +7,6 @@ import store from "./redux/store/";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
-console.log(reset);
 const GlobalStyle = createGlobalStyle`
   ${reset}
   * {
