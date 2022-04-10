@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import { css } from "styled-components/macro";
 import type {} from "styled-components/cssprop";
 import { flexProps } from "./mixins_interfaces";
 
