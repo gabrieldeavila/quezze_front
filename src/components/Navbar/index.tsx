@@ -1,21 +1,48 @@
-import React from "react";
-import { NavbarStyle } from "./style";
-import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
-import { ReactComponent as Logo } from "../../assets/svg/logo.svg";
+import { memo, useContext } from "react";
+import {
+  NavbarDiv,
+  NavbarInput,
+  NavbarInputSearch,
+  NavbarInputWrapper,
+  NavbarStyle,
+} from "./style";
+import { AiOutlineSearch } from "react-icons/ai";
 import ProfilePic from "../ProfilePic";
-import { Div } from "./../../assets/styled/base";
+import { iconConfig } from "./../../config/index";
+import { Logo, LogoDesktop } from "../Icons/logo";
+import { GlobalContext } from "../../Contexts/global";
+import { useMobile } from "../../Hooks/useMobile";
 
-export default function Navbar() {
-  return (
+export default memo(function Navbar() {
+  const { state, setState } = useContext(GlobalContext);
+  const isMobile = useMobile();
+
+  const openSidebar = () => {
+    if (!isMobile) return;
+
+    setState({ ...state, isSidebarOpen: !state.isSidebarOpen });
+  };
+
+  return isMobile ? (
     <NavbarStyle>
-      <Div>
-        <AiOutlineMenu />
-        <Logo />
-      </Div>
-      <Div>
-        <AiOutlineSearch />
+      <Logo onClick={openSidebar} />
+      <NavbarDiv>
+        <AiOutlineSearch {...iconConfig} />
         <ProfilePic />
-      </Div>
+      </NavbarDiv>
+    </NavbarStyle>
+  ) : (
+    <NavbarStyle>
+      <LogoDesktop />
+      <NavbarInputWrapper>
+        <NavbarInput placeholder="Procurar Quizz" />
+        <NavbarInputSearch>
+          <AiOutlineSearch {...iconConfig} />
+        </NavbarInputSearch>
+      </NavbarInputWrapper>
+      <NavbarDiv>
+        <ProfilePic />
+      </NavbarDiv>
     </NavbarStyle>
   );
-}
+});
