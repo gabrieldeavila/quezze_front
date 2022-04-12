@@ -1,10 +1,10 @@
 import styled from "styled-components/macro";
 import { Div } from "../../assets/styled/base";
-import { light_grey } from "./../../assets/styled/base";
+import { light_grey } from "../../assets/styled/base";
 
-export const Avatar = styled(Div)`
-  width: 32px;
-  height: 32px;
+export const Avatar = styled(Div)<AvatarProps>`
+  width: ${(props) => (props.mobile ? "32" : "50")}px;
+  height: ${(props) => (props.mobile ? "32" : "50")}px;
   background-color: ${light_grey};
   overflow: hidden;
   border-radius: 50%;
@@ -14,3 +14,7 @@ export const Avatar = styled(Div)`
     height: 100%;
   }
 `;
+
+interface AvatarProps {
+  mobile?: boolean;
+}
