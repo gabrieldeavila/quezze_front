@@ -2,18 +2,27 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NotFound from "./../Pages/NotFound/index";
 
+import { RoutesContainer } from "./style";
+import { useMobile } from "./../Hooks/useMobile";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
+
 const Home = lazy(() => import("../Pages/Home"));
-// import Home from "../Pages/Home";
 
 export default function RoutesWrapper() {
+  const isMobile = useMobile();
+
   return (
     <Suspense fallback={""}>
       <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="/new" element={<Posts />} /> */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Navbar />
+        <Sidebar />
+        <RoutesContainer isMobile={isMobile}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </RoutesContainer>
       </Router>
     </Suspense>
   );
