@@ -1,4 +1,4 @@
-import { memo, useContext } from "react";
+import { memo, useCallback, useContext } from "react";
 import {
   IconName,
   SidebarAnimDiv,
@@ -14,7 +14,7 @@ import { Logo } from "./../Icons/logo";
 import { useSpring } from "react-spring";
 import { GlobalContext } from "./../../Contexts/global";
 import { useMobile } from "../../Hooks/useMobile";
-import { AiFillHome, AiOutlineMenu } from "react-icons/ai";
+import { ImHome3 } from "react-icons/im";
 import { FaPalette } from "react-icons/fa";
 
 export default memo(function Sidebar() {
@@ -28,11 +28,11 @@ export default memo(function Sidebar() {
     to: { translateX: isSidebarOpen ? 0 : -window.innerWidth - 20 },
   });
 
-  const closeSidebar = () => {
+  const closeSidebar = useCallback(() => {
     if (!isMobile) return;
 
     setState({ ...state, isSidebarOpen: !state.isSidebarOpen });
-  };
+  }, [isMobile, state]);
 
   return isMobile ? (
     <SidebarAnimDiv style={styles}>
@@ -49,7 +49,7 @@ export default memo(function Sidebar() {
   ) : (
     <SidebarWrapperDesktop>
       <SidebarDesktopIcon to="/">
-        <AiFillHome />
+        <ImHome3 />
         <IconName>Home</IconName>
       </SidebarDesktopIcon>
       <SidebarDesktopIcon to="/create">

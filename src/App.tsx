@@ -1,5 +1,5 @@
 import RoutesWrapper from "./routes";
-
+import "./translate/";
 import { GlobalProvider } from "./Contexts/global";
 
 function App() {

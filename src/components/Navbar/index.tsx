@@ -12,10 +12,12 @@ import { iconConfig } from "./../../config/index";
 import { Logo, LogoDesktop } from "../Icons/logo";
 import { GlobalContext } from "../../Contexts/global";
 import { useMobile } from "../../Hooks/useMobile";
+import { useTranslation, Trans } from "react-i18next";
 
 export default memo(function Navbar() {
   const { state, setState } = useContext(GlobalContext);
   const isMobile = useMobile();
+  const { t } = useTranslation();
 
   const openSidebar = () => {
     if (!isMobile) return;
@@ -35,7 +37,7 @@ export default memo(function Navbar() {
     <NavbarStyle>
       <LogoDesktop />
       <NavbarInputWrapper>
-        <NavbarInput placeholder="Procurar Quizz" />
+        <NavbarInput placeholder={t("description.part2")} />
         <NavbarInputSearch>
           <AiOutlineSearch {...iconConfig} />
         </NavbarInputSearch>
