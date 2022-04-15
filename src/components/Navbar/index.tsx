@@ -37,7 +37,7 @@ export default memo(function Navbar() {
     <NavbarStyle>
       <LogoDesktop />
       <NavbarInputWrapper>
-        <NavbarInput placeholder={t("description.part2")} />
+        <NavbarInput placeholder={t("navbar.placeholder")} />
         <NavbarInputSearch>
           <AiOutlineSearch {...iconConfig} />
         </NavbarInputSearch>
