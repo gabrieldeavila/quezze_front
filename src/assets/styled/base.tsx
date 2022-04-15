@@ -10,7 +10,9 @@ export const light_black = "#353536";
 export const dark_black = "#1E1E1F";
 export const red = "#FC8490";
 
-export const AnimDiv = styled(animated.div)<any>``;
+export const AnimDiv = styled(animated.div)<any>`
+  z-index: 1000;
+`;
 
 export const Div = styled.div<DivProps>`
   ${flex};
