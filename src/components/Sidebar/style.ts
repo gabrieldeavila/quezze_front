@@ -52,7 +52,7 @@ export const SidebarWrapperDesktop = styled(Div)`
   height: 100%;
   padding-top: 3rem;
   width: 108px;
-  margin-top: calc(20px + 4rem);
+  margin-top: calc(68px + 0.5rem);
   background: ${dark_black};
   position: fixed;
   flex-direction: column;
@@ -95,9 +95,9 @@ export const SidebarDesktopIcon = styled(NavLink)`
 
   &:hover {
     color: #fff;
-    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px ${red},
-      0 0 82px ${red}, 0 0 92px ${red}, 0 0 102px ${red}, 0 0 151px ${red};
   }
 `;
 
-export const IconName = styled(Div)``;
+export const IconName = styled(Div)`
+  font-size: 12px;
+`;

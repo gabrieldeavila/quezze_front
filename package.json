@@ -28,6 +28,7 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
+    "react-select": "^5.3.0",
     "react-spring": "^9.4.4",
     "react-use": "^17.3.2",
     "reactjs-popup": "^2.0.5",
