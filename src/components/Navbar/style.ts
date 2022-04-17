@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import { dark_black, Div } from "../../assets/styled/base";
 import { flex } from "../../assets/styled/mixins";
 import { light_grey, dark_grey, light_black } from "./../../assets/styled/base";
 
-export const NavbarStyle = styled.nav`
+export const NavbarStyle = styled.nav<ProfilePicProps>`
   ${flex};
   justify-content: space-between;
+  z-index: 998;
   padding: 2rem;
   background-color: ${dark_black};
   width: -webkit-fill-available;
@@ -51,3 +53,20 @@ export const NavbarInputSearch = styled(Div)`
     background: ${light_black};
   }
 `;
+
+export const ProfilePicWrapper = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+`;
+
+export const ProfileOption = styled(Link)`
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: ${dark_black};
+`;
+
+interface ProfilePicProps {
+  isMobile?: boolean;
+}
