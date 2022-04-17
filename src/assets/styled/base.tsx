@@ -1,7 +1,6 @@
-import styled from "styled-components/macro";
-import { flex } from "./mixins";
+import styled, { css } from "styled-components/macro";
+import { flex, H1config, marginPaddingWidth } from "./mixins";
 import { DivProps } from "./base_interfaces";
-import type {} from "styled-components/cssprop";
 import { animated } from "react-spring";
 
 export const light_grey = "#C4C8CA";
@@ -18,4 +17,24 @@ export const Div = styled.div<DivProps>`
   ${flex};
   width: 100%;
   gap: ${(props: DivProps) => props.gap || "1rem"};
+`;
+
+export const H1Light = styled.h1`
+  ${H1config}
+  color: ${light_grey};
+`;
+
+export const H1Dark = styled.h1`
+  ${H1config}
+  color: ${dark_grey};
+`;
+
+export const PLight = styled.p`
+  color: ${light_grey};
+  ${marginPaddingWidth};
+`;
+
+export const PDark = styled.p`
+  color: ${dark_grey};
+  ${marginPaddingWidth};
 `;
