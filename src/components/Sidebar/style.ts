@@ -50,7 +50,7 @@ export const SidebarBlank = styled(SidebarStyle)`
 
 export const SidebarWrapperDesktop = styled(Div)`
   height: 100%;
-  padding-top: 1rem;
+  padding-top: 3rem;
   width: 108px;
   margin-top: calc(20px + 4rem);
   background: ${dark_black};
