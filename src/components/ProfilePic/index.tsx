@@ -4,7 +4,7 @@ import { useMobile } from "./../../Hooks/useMobile";
 import { AiOutlineUser } from "react-icons/ai";
 import { light_black } from "./../../assets/styled/base";
 
-export default memo(function ProfilePic() {
+const ProfilePic: React.FC<AvatarProps> = ({ bigSize }: AvatarProps) => {
   const isMobile = useMobile();
 
   const user = {
@@ -13,12 +13,21 @@ export default memo(function ProfilePic() {
   };
 
   return (
-    <Avatar mobile={isMobile}>
+    <Avatar bigSize={bigSize} mobile={isMobile}>
       {user.image ? (
         <img src={user.image || ""} alt={user.name} />
       ) : (
-        <AiOutlineUser size={isMobile ? 20 : 30} color={light_black} />
+        <AiOutlineUser
+          size={bigSize ? 100 : isMobile ? 20 : 30}
+          color={light_black}
+        />
       )}
     </Avatar>
   );
-});
+};
+
+interface AvatarProps {
+  bigSize?: boolean;
+}
+
+export default memo(ProfilePic);
