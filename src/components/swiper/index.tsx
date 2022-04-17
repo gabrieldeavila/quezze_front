@@ -4,50 +4,56 @@ import { memo } from "react";
 import "swiper/css";
 import {
   QuizContainer,
-  QuizSlide,
+  QuizTitle,
   SlideButton,
   SlideDescription,
   SlideTitle,
 } from "./style";
+import { useWindowSize } from "react-use";
 
 export default memo(function QuizSwiper() {
+  const { width } = useWindowSize();
+
   return (
-    <QuizContainer spaceBetween={20} slidesPerView={4}>
-      <SwiperSlide>
-        <SlideTitle>Título Teste</SlideTitle>
-        <SlideDescription>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim eu
-          vivamus in consequat. Tellus bibendum vel lectus lacus nulla in.
-        </SlideDescription>
-        <SlideButton>Play</SlideButton>
-      </SwiperSlide>
+    <>
+      <QuizTitle>Category name</QuizTitle>
+      <QuizContainer spaceBetween={40} slidesPerView={width / 310}>
+        <SwiperSlide>
+          <SlideTitle>Título Teste</SlideTitle>
+          <SlideDescription>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim
+            eu vivamus in consequat. Tellus bibendum vel lectus lacus nulla in.
+          </SlideDescription>
+          <SlideButton>Play</SlideButton>
+        </SwiperSlide>
 
-      <SwiperSlide>
-        <SlideTitle>Título Teste 2</SlideTitle>
-        <SlideDescription>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim eu
-          vivamus in consequat. Tellus bibendum vel lectus lacus nulla in.
-        </SlideDescription>
-        <SlideButton>Play</SlideButton>
-      </SwiperSlide>
+        <SwiperSlide>
+          <SlideTitle>Título Teste 2</SlideTitle>
+          <SlideDescription>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim
+            eu vivamus in consequat. Tellus bibendum vel lectus lacus nulla in.
+          </SlideDescription>
+          <SlideButton>Play</SlideButton>
+        </SwiperSlide>
 
-      <SwiperSlide>
-        <SlideTitle>Título Teste 3</SlideTitle>
-        <SlideDescription>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim eu
-          vivamus in consequat. Tellus bibendum vel lectus lacus nulla in.
-        </SlideDescription>
-        <SlideButton>Play</SlideButton>
-      </SwiperSlide>
+        <SwiperSlide>
+          <SlideTitle>Título Teste 3</SlideTitle>
+          <SlideDescription>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim
+            eu vivamus in consequat. Tellus bibendum vel lectus lacus nulla in.
+          </SlideDescription>
+          <SlideButton>Play</SlideButton>
+        </SwiperSlide>
 
-      <SwiperSlide>
-        <SlideTitle>Título Teste 4</SlideTitle>
-        <SlideDescription>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim eu
-          vivamus in consequat. Tellus bibendum vel lectus lacus nulla in.
-        </SlideDescription>
-        <SlideButton>Play</SlideButton>
-      </SwiperSlide>
-    </QuizContainer>
+        <SwiperSlide>
+          <SlideTitle>Título Teste 4</SlideTitle>
+          <SlideDescription>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim
+            eu vivamus in consequat. Tellus bibendum vel lectus lacus nulla in.
+          </SlideDescription>
+          <SlideButton>Play</SlideButton>
+        </SwiperSlide>
+      </QuizContainer>
+    </>
   );
 });
