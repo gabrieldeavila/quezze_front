@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Select from "react-select";
 import styled from "styled-components/macro";
 import { dark_black, Div } from "../../assets/styled/base";
 import { flex } from "../../assets/styled/mixins";
@@ -8,12 +9,30 @@ export const NavbarStyle = styled.nav<ProfilePicProps>`
   ${flex};
   justify-content: space-between;
   z-index: 998;
-  padding: 2rem;
+  padding: 0.5rem 1rem;
   background-color: ${dark_black};
   width: -webkit-fill-available;
   position: fixed;
-  height: 20px;
+  height: 64px;
 `;
+
+export const NavbarLink = styled(Link)`
+  color: ${dark_grey};
+  font-weight: bold;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+`;
+
+export const NavbarSelect = styled(Select)``;
+
+export const NavbarSelectStyles = {
+  control: (base = {}, state = {}) => ({
+    ...base,
+    backgroundColor: light_grey,
+    border: "none",
+  }),
+};
 
 export const NavbarDiv = styled(Div)`
   width: auto;
