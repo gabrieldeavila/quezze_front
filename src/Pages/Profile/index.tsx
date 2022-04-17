@@ -1,6 +1,19 @@
 import React from "react";
-import { ProfileWrapper } from "./style";
+import { H1Light, PDark, PLight } from "../../assets/styled/base";
+import ProfilePic from "../../components/ProfilePic";
+import Swiper from "../../components/swiper";
+import { ProfileImage, ProfileWrapper } from "./style";
 
 export default function Profile() {
-  return <ProfileWrapper>{/* <Profile */}</ProfileWrapper>;
+  return (
+    <ProfileWrapper>
+      <ProfilePic bigSize />
+      <H1Light>John Doe</H1Light>
+      <PDark>@john_doe</PDark>
+      <PLight mt="2" mb="4" width="30">
+        Hi, folks! I'm John Doe! And I'm very happy boys.
+      </PLight>
+      <Swiper />
+    </ProfileWrapper>
+  );
 }
