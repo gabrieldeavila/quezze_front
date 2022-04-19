@@ -1,5 +1,6 @@
 {
   "navbar": {
-    "placeholder": "Search Quizz"
+    "placeholder": "Search Quizz",
+    "profile": "Access Profile"
   }
 }

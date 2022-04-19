@@ -32,6 +32,17 @@ export const NavbarSelectStyles = {
     backgroundColor: light_grey,
     border: "none",
   }),
+  valueContainer: (base = {}, state = {}) => ({
+    ...base,
+    padding: 0,
+  }),
+  singleValue: (base = {}, state = {}) => ({
+    ...base,
+    fontWeight: "bold",
+    color: dark_grey,
+    height: "fit-content",
+    margin: "0px",
+  }),
 };
 
 export const NavbarDiv = styled(Div)`
