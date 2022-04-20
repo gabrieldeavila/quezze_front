@@ -2,5 +2,9 @@
   "navbar": {
     "placeholder": "Search Quizz",
     "profile": "Access Profile"
+  },
+  "sidebar": {
+    "create": "Create",
+    "home": "Home"
   }
 }

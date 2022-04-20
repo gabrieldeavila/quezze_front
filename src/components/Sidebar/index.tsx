@@ -16,11 +16,13 @@ import { GlobalContext } from "./../../Contexts/global";
 import { useMobile } from "../../Hooks/useMobile";
 import { ImHome3 } from "react-icons/im";
 import { FaPalette } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 export default memo(function Sidebar() {
   const { state, setState } = useContext(GlobalContext);
   const { isSidebarOpen } = state;
   const isMobile = useMobile();
+  const { t } = useTranslation();
 
   const styles = useSpring({
     loop: false,
@@ -50,11 +52,11 @@ export default memo(function Sidebar() {
     <SidebarWrapperDesktop>
       <SidebarDesktopIcon to="/">
         <ImHome3 />
-        <IconName>Home</IconName>
+        <IconName>{t("sidebar.home")}</IconName>
       </SidebarDesktopIcon>
       <SidebarDesktopIcon to="/create">
         <FaPalette />
-        <IconName>Create</IconName>
+        <IconName>{t("sidebar.create")}</IconName>
       </SidebarDesktopIcon>
     </SidebarWrapperDesktop>
   );

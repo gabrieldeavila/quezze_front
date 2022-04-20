@@ -1,4 +1,4 @@
-import { memo, useContext } from "react";
+import { memo, useContext, useState } from "react";
 import {
   NavbarDiv,
   NavbarInput,
@@ -10,6 +10,7 @@ import {
   NavbarStyle,
   ProfileOption,
   ProfilePicWrapper,
+  ProfileSelectStyles,
 } from "./style";
 import { AiOutlineSearch } from "react-icons/ai";
 import ProfilePic from "../ProfilePic";
@@ -30,6 +31,7 @@ export default memo(function Navbar() {
   const { state, setState } = useContext(GlobalContext);
   const isMobile = useMobile();
   const { t, i18n } = useTranslation();
+  const [showModal, setShowModal] = useState(false);
 
   const openSidebar = () => {
     if (!isMobile) return;
@@ -44,8 +46,8 @@ export default memo(function Navbar() {
 
   return isMobile ? (
     <NavbarStyle isMobile>
-      <Modal>
-        <NavbarLink to="/profile">Visualizar Perfil</NavbarLink>
+      <Modal showModal={showModal} setShowModal={setShowModal}>
+        <NavbarLink to="/profile">{t("navbar.profile")}</NavbarLink>
         <NavbarSelect
           styles={NavbarSelectStyles}
           defaultValue={_.find(languageOptions, { value: i18n.language })}
@@ -62,7 +64,7 @@ export default memo(function Navbar() {
 
       <NavbarDiv>
         <AiOutlineSearch {...iconConfig} />
-        <ProfilePic />
+        <ProfilePic onClick={() => setShowModal(true)} />
       </NavbarDiv>
     </NavbarStyle>
   ) : (
@@ -89,6 +91,16 @@ export default memo(function Navbar() {
           closeOnDocumentClick
         >
           <ProfileOption to="/profile">{t("navbar.profile")}</ProfileOption>
+          <NavbarSelect
+            styles={ProfileSelectStyles}
+            defaultValue={_.find(languageOptions, { value: i18n.language })}
+            options={languageOptions}
+            onChange={(val) => {
+              // @ts-ignore
+              let value = val?.value;
+              handleChange(value);
+            }}
+          />
         </Popup>
       </NavbarDiv>
     </NavbarStyle>

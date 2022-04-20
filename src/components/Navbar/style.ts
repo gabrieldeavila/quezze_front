@@ -43,6 +43,10 @@ export const NavbarSelectStyles = {
     height: "fit-content",
     margin: "0px",
   }),
+  dropdownIndicator: (base = {}, state = {}) => ({
+    ...base,
+    color: dark_grey,
+  }),
 };
 
 export const NavbarDiv = styled(Div)`
@@ -96,6 +100,27 @@ export const ProfileOption = styled(Link)`
   text-decoration: none;
   color: ${dark_black};
 `;
+
+export const ProfileSelectStyles = {
+  control: (base = {}, state = {}) => ({
+    ...base,
+    border: "none",
+  }),
+  valueContainer: (base = {}, state = {}) => ({
+    ...base,
+    padding: 0,
+  }),
+  singleValue: (base = {}, state = {}) => ({
+    ...base,
+    color: light_black,
+    height: "fit-content",
+    margin: "0px",
+  }),
+  dropdownIndicator: (base = {}, state = {}) => ({
+    ...base,
+    color: dark_grey,
+  }),
+};
 
 interface ProfilePicProps {
   isMobile?: boolean;
