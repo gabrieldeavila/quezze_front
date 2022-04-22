@@ -31,7 +31,7 @@ export const SidebarStyle = styled(Div)`
 `;
 
 export const SidebarLogo = styled(Div)`
-  width: 80%;
+  width: 90%;
   height: calc(20px + 4rem);
   justify-content: flex-start;
 `;

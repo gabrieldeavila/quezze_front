@@ -6,5 +6,8 @@
   "sidebar": {
     "create": "Criar",
     "home": "Início"
+  },
+  "create": {
+    "title": "Criando o seu Quizz"
   }
 }

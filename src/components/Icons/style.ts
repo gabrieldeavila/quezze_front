@@ -3,8 +3,12 @@ import { Div } from "../../assets/styled/base";
 
 export const LogoDiv = styled(Div)`
   svg {
-    width: 100px;
+    width: ${(props: LogoDivParams) => (!props.isMobile ? "100px" : "auto")};
   }
   width: auto;
-  align-items: flex-start;
+  justify-content: flex-start;
 `;
+
+interface LogoDivParams {
+  isMobile?: boolean;
+}

@@ -7,7 +7,7 @@ import { LogoDiv } from "./style";
 
 export const Logo: FunctionComponent<LogoParams> = ({ onClick }) => {
   return (
-    <LogoDiv onClick={onClick}>
+    <LogoDiv isMobile onClick={onClick}>
       <AiOutlineMenu {...iconConfig} />
       <Quezze />
     </LogoDiv>

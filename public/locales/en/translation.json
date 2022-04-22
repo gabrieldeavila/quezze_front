@@ -6,5 +6,8 @@
   "sidebar": {
     "create": "Create",
     "home": "Home"
+  },
+  "create": {
+    "title": "Creating Your Quezze"
   }
 }

@@ -1,4 +1,4 @@
-import { memo, useContext, useState } from "react";
+import { memo, useContext, useEffect, useState } from "react";
 import {
   NavbarDiv,
   NavbarInput,
@@ -21,7 +21,7 @@ import { useMobile } from "../../Hooks/useMobile";
 import { useTranslation, Trans } from "react-i18next";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Modal from "../Modal";
 import { handleLanguage, languageOptions } from "./languagesOptions";
 import _ from "lodash";

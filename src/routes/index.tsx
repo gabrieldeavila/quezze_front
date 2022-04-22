@@ -6,6 +6,8 @@ import { RoutesContainer } from "./style";
 import NotFound from "./../Pages/NotFound/index";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
+import ScrollToTop from "./scrollToTop";
+import Create from "../Pages/Create";
 
 const Home = lazy(() => import("../Pages/Home"));
 const Profile = lazy(() => import("../Pages/Profile"));
@@ -16,11 +18,13 @@ export default function RoutesWrapper() {
   return (
     <Suspense fallback={""}>
       <Router>
+        <ScrollToTop />
         <Navbar />
         <Sidebar />
         <RoutesContainer isMobile={isMobile}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/create" element={<Create />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
