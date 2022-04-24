@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components/macro";
-import { flex } from "./../../assets/styled/mixins";
+import { flex, Scrollbar } from "./../../assets/styled/mixins";
 import {
   AnimDiv,
   dark_black,
@@ -60,17 +60,7 @@ export const SidebarWrapperDesktop = styled(Div)`
   overflow: auto;
   gap: 2rem;
 
-  &::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: ${light_grey};
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: ${dark_grey};
-  }
+  ${Scrollbar}
 `;
 
 export const SidebarDesktopIcon = styled(NavLink)`

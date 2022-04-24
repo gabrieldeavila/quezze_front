@@ -9,7 +9,22 @@
   },
   "create": {
     "title": "Criando o seu Quizz",
-    "button": "Bora Criar!"
+    "button": "Bora Criar!",
+    "types": {
+      "cats": "Gatos",
+      "dogs": "Cães",
+      "animals": "Animais",
+      "food": "Comida",
+      "sports": "Esporte",
+      "geography": "Geografia",
+      "history": "História",
+      "music": "Música",
+      "movies": "Filmes",
+      "tv": "TV",
+      "science": "Ciência",
+      "math": "Matemátiac",
+      "general": "Geral"
+    }
   },
   "form": {
     "name": "Nome",

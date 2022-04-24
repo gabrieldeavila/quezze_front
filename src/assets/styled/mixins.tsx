@@ -1,6 +1,7 @@
 import { css } from "styled-components/macro";
 import type {} from "styled-components/cssprop";
 import { FlexProps, MarginPaddingWidthProps } from "./mixins_interfaces";
+import { dark_grey, light_grey } from "./base";
 
 export const flex = css`
   display: flex;
@@ -26,4 +27,18 @@ export const H1config = css`
   font-size: 1.75rem;
   font-weight: 650;
   margin-top: 1rem;
+`;
+
+export const Scrollbar = css`
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #c4c8ca;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #7f7f83;
+  }
 `;

@@ -52,8 +52,7 @@ export default memo(function Navbar() {
           styles={NavbarSelectStyles}
           defaultValue={_.find(languageOptions, { value: i18n.language })}
           options={languageOptions}
-          onChange={(val) => {
-            // @ts-ignore
+          onChange={(val: any) => {
             let value = val?.value;
             handleChange(value);
           }}

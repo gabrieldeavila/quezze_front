@@ -9,7 +9,22 @@
   },
   "create": {
     "title": "Creating Your Quezze",
-    "button": "Let's Create!"
+    "button": "Let's Create!",
+    "types": {
+      "cats": "Cats",
+      "dogs": "Dogs",
+      "animals": "Animals",
+      "food": "Food",
+      "sports": "Sports",
+      "geography": "Geography",
+      "history": "History",
+      "music": "Music",
+      "movies": "Movies",
+      "tv": "TV",
+      "science": "Science",
+      "math": "Math",
+      "general": "General"
+    }
   },
   "form": {
     "name": "Name",

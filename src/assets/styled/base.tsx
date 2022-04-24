@@ -39,3 +39,19 @@ export const PDark = styled.p`
   color: ${dark_grey};
   ${marginPaddingWidth};
 `;
+
+export const Button = styled.button`
+  color: ${dark_black};
+  font-weight: bold;
+  background-color: ${light_grey};
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.25s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+`;

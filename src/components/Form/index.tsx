@@ -22,8 +22,7 @@ function Basic({
     <FormWrapper mt="2" onSubmit={handleSubmit}>
       {children.map((child: any) => {
         let name = child.props.name;
-
-        if (child.type === "input") {
+        if (["input", "textarea"].includes(child.type)) {
           // quando for um input, clona o elemento e permita que salve o valor
           return (
             <InputWrapper>
@@ -37,7 +36,28 @@ function Basic({
               })}
             </InputWrapper>
           );
-        } else if (child.type === "button") {
+        } else if (child.props?.options) {
+          // quando for um select, clona o elemento e permita que salve o valor
+          let translate = child.props["data-translate"];
+          let options = child.props["data-options"];
+
+          let label = _.find(child.props.options, {
+            value: values[name],
+          })?.label;
+
+          return (
+            <InputWrapper>
+              <InputLabel for={name}>{t(`form.${name}`)}</InputLabel>
+
+              {React.cloneElement(child, {
+                onChange: (e: any) => {
+                  setValues({ ...values, [name]: e.value });
+                },
+                defaultValue: t(`${translate}.${options}.${label}`),
+              })}
+            </InputWrapper>
+          );
+        } else if (child.type?.target === "button") {
           // já se for um botão, desabilitar caso haja algum erro ou estiver submetendo os valores
           return React.cloneElement(child, {
             disabled: isSubmitting || !_.isEmpty(errors),
