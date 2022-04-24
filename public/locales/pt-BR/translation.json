@@ -8,6 +8,12 @@
     "home": "Início"
   },
   "create": {
-    "title": "Criando o seu Quizz"
+    "title": "Criando o seu Quizz",
+    "button": "Bora Criar!"
+  },
+  "form": {
+    "name": "Nome",
+    "type": "Tipo",
+    "description": "Descrição"
   }
 }

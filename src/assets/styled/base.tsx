@@ -3,6 +3,7 @@ import { flex, H1config, marginPaddingWidth } from "./mixins";
 import { DivProps } from "./base_interfaces";
 import { animated } from "react-spring";
 
+export const white = "#FFFFFF";
 export const light_grey = "#C4C8CA";
 export const dark_grey = "#7F7F83";
 export const light_black = "#353536";
