@@ -1,3 +1,5 @@
+import { number } from "yup";
+
 export interface FormProps {
   submitText?: string;
 }
@@ -33,4 +35,13 @@ export interface SubmitProps {
   isSubmitting: boolean;
   child: JSX.Element;
   errors: {};
+}
+
+export interface SelectProps {
+  value: number;
+  label: string;
+}
+
+export interface TranslateSelectOptionsProps {
+  options: SelectProps[];
 }

@@ -8,6 +8,7 @@ import { setCreateAction } from "../../redux/actions/CreateActions";
 import { AppState } from "../../redux/store";
 import Select from "react-select";
 import { ex } from "./data_example";
+import { translateSelect } from "../../components/Form/Fields/select/translateSelect";
 
 export default function Create() {
   const { t } = useTranslation();
@@ -18,15 +19,15 @@ export default function Create() {
   }, [dispatch]);
 
   const create = useSelector((state: AppState) => state.create);
+  const options = translateSelect({ options: ex }, "create.types");
 
   return (
     <>
       <H1Light>{t("create.title")}</H1Light>
       <Form>
         <input type="text" name="name" />
-        <input type="text" name="type" />
         <Select
-          options={ex}
+          options={options}
           name="type"
           data-translate="create"
           data-options="types"

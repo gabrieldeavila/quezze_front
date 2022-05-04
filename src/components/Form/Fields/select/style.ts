@@ -7,6 +7,11 @@ export const SelectStyle = {
     border: "none",
     boxShadow: "none",
     borderRadius: "8px",
+    cursor: "pointer",
+  }),
+  option: (base = {}) => ({
+    ...base,
+    cursor: "pointer",
   }),
   input: (base = {}, state = {}) => ({
     ...base,

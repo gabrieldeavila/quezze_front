@@ -20,8 +20,6 @@ const Select = ({ name, child, values, setValues }: FieldsProps) => {
     setValues({ ...values, [name]: e.value });
   };
 
-  const defaultValue = t(`${translate}.${options}.${label}`);
-
   const styles = SelectStyle;
 
   return (
@@ -30,7 +28,6 @@ const Select = ({ name, child, values, setValues }: FieldsProps) => {
 
       {React.cloneElement(child, {
         onChange,
-        defaultValue,
         styles,
       })}
     </InputWrapper>
