@@ -25,7 +25,7 @@ const Select = ({ name, child, values, setValues }: FieldsProps) => {
   const styles = SelectStyle;
 
   return (
-    <InputWrapper>
+    <InputWrapper removeBoxShadow>
       <InputLabel for={name}>{t(`form.${name}`)}</InputLabel>
 
       {React.cloneElement(child, {

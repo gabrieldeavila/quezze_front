@@ -2,6 +2,10 @@ export interface FormProps {
   submitText?: string;
 }
 
+export interface InputWrapperProps {
+  removeBoxShadow?: boolean;
+}
+
 export interface FormWrapperProps {
   mt?: string;
 }

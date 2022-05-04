@@ -5,7 +5,7 @@ import {
   marginPaddingWidth,
   Scrollbar,
 } from "../../assets/styled/mixins";
-import { FormWrapperProps, LabelProps } from "./interfaces";
+import { FormWrapperProps, InputWrapperProps, LabelProps } from "./interfaces";
 import { white } from "./../../assets/styled/base";
 
 export const FormWrapper = styled.form<FormWrapperProps>`
@@ -15,21 +15,24 @@ export const FormWrapper = styled.form<FormWrapperProps>`
   gap: 1.5rem;
 `;
 
-export const InputWrapper = styled.div`
+export const InputWrapper = styled.div<InputWrapperProps>`
   width: 100%;
   position: relative;
 
   input,
   textarea {
-    width: 97%;
+    width: -webkit-fill-available;
     background: ${light_grey};
     color: ${dark_black};
     border: none;
     padding: 1rem;
     padding-top: 1.5rem;
-    border-radius: 8px;
     outline: none;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    ${(props) =>
+      !props.removeBoxShadow &&
+      `box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+       border-radius: 8px;
+      `};
   }
 
   textarea {

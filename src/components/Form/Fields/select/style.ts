@@ -5,10 +5,17 @@ export const SelectStyle = {
     ...base,
     backgroundColor: light_grey,
     border: "none",
+    boxShadow: "none",
+    borderRadius: "8px",
+  }),
+  input: (base = {}, state = {}) => ({
+    ...base,
+    boxShadow: "none",
   }),
   valueContainer: (base = {}, state = {}) => ({
     ...base,
-    padding: 0,
+    padding: "1rem",
+    outline: "none",
   }),
   singleValue: (base = {}, state = {}) => ({
     ...base,
