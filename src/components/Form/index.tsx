@@ -4,6 +4,7 @@ import { FormProps } from "./interfaces";
 import _ from "lodash";
 import { FormWrapper, InputLabel, InputWrapper } from "./style";
 import { useTranslation } from "react-i18next";
+import FieldType from "./Fields/findType";
 
 function Basic({
   errors,
@@ -14,56 +15,12 @@ function Basic({
   setFieldTouched,
   children,
   setValues,
-  ...props
-}: any | FormProps) {
-  const { t } = useTranslation();
-
+}: any) {
   return (
     <FormWrapper mt="2" onSubmit={handleSubmit}>
-      {children.map((child: any) => {
-        let name = child.props.name;
-        if (["input", "textarea"].includes(child.type)) {
-          // quando for um input, clona o elemento e permita que salve o valor
-          return (
-            <InputWrapper>
-              <InputLabel for={name}>{t(`form.${name}`)}</InputLabel>
-
-              {React.cloneElement(child, {
-                onChange: (e: any) => {
-                  setValues({ ...values, [name]: e.target.value });
-                },
-                value: values[name],
-              })}
-            </InputWrapper>
-          );
-        } else if (child.props?.options) {
-          // quando for um select, clona o elemento e permita que salve o valor
-          let translate = child.props["data-translate"];
-          let options = child.props["data-options"];
-
-          let label = _.find(child.props.options, {
-            value: values[name],
-          })?.label;
-
-          return (
-            <InputWrapper>
-              <InputLabel for={name}>{t(`form.${name}`)}</InputLabel>
-
-              {React.cloneElement(child, {
-                onChange: (e: any) => {
-                  setValues({ ...values, [name]: e.value });
-                },
-                defaultValue: t(`${translate}.${options}.${label}`),
-              })}
-            </InputWrapper>
-          );
-        } else if (child.type?.target === "button") {
-          // já se for um botão, desabilitar caso haja algum erro ou estiver submetendo os valores
-          return React.cloneElement(child, {
-            disabled: isSubmitting || !_.isEmpty(errors),
-          });
-        }
-      })}
+      {children.map((child: any) => (
+        <FieldType {...{ child, setValues, values, isSubmitting, errors }} />
+      ))}
     </FormWrapper>
   );
 }

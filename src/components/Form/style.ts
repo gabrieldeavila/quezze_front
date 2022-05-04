@@ -41,6 +41,7 @@ export const InputWrapper = styled.div`
 export const InputLabel = styled.label<LabelProps>`
   font-weight: 600;
   width: fit-content;
+  z-index: 2;
   position: absolute;
   padding: 0.2rem 0.5rem;
   user-select: none;
