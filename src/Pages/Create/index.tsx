@@ -9,6 +9,7 @@ import { AppState } from "../../redux/store";
 import Select from "react-select";
 import { ex } from "./data_example";
 import { translateSelect } from "../../components/Form/Fields/select/translateSelect";
+import Drop from "../../components/dropzone";
 
 export default function Create() {
   const { t } = useTranslation();
@@ -33,6 +34,7 @@ export default function Create() {
           data-options="types"
         />
         <textarea name="description"></textarea>
+        <Drop dropzone />
         <Button type="submit">{t("create.button")}</Button>
       </Form>
     </>

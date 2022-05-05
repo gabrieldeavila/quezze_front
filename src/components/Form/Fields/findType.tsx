@@ -16,7 +16,7 @@ const FieldType = ({
 }: FieldTypeProps) => {
   let name = child.props.name;
   let settings = { name, child, values, setValues };
-
+  console.log(child);
   // quando for um input, clona o elemento e permite que salve o valor
   if (["input", "textarea"].includes(child.type)) {
     return <Input {...settings} />;
@@ -25,6 +25,12 @@ const FieldType = ({
   // quando elemento for do tipo ReactSelect
   if (child.props?.options) {
     return <Select {...settings} />;
+  }
+
+  // elemento é um dropzone
+  if (child.type?.dropzone) {
+    console.log("FALTA FZR hehe");
+    return <></>;
   }
 
   // elemento é um botão
