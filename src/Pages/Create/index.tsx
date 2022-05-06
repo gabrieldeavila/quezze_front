@@ -34,7 +34,7 @@ export default function Create() {
           data-options="types"
         />
         <textarea name="description"></textarea>
-        <Drop dropzone />
+        <Drop dropzone name="thumbnail" />
         <Button type="submit">{t("create.button")}</Button>
       </Form>
     </>

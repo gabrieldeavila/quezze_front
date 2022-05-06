@@ -1,17 +1,27 @@
-import React from "react";
+import { useEffect } from "react";
 import Dropzone from "react-dropzone";
 import { DropzoneProps } from "./interface";
+import { DropzoneContainer, DropzoneWrapper } from "./style";
+import { useTranslation } from "react-i18next";
+import { AiOutlineEdit } from "react-icons/ai";
 
 const Drop = (props: DropzoneProps) => {
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    console.log(props.value);
+  }, [props.value]);
+
   return (
-    <Dropzone>
+    <Dropzone onDrop={props.onDrop}>
       {({ getRootProps, getInputProps }) => (
-        <section>
-          <div {...getRootProps()}>
+        <DropzoneWrapper>
+          <DropzoneContainer {...getRootProps()}>
             <input {...getInputProps()} />
-            <p>Drag 'n' drop some files here, or click to select files</p>
-          </div>
-        </section>
+            <AiOutlineEdit />
+            <p>{t("dropzone")}</p>
+          </DropzoneContainer>
+        </DropzoneWrapper>
       )}
     </Dropzone>
   );

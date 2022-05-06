@@ -6,7 +6,7 @@ export const SelectStyle = {
     backgroundColor: light_grey,
     border: "none",
     boxShadow: "none",
-    borderRadius: "8px",
+    borderRadius: "5px",
     cursor: "pointer",
   }),
   option: (base = {}) => ({

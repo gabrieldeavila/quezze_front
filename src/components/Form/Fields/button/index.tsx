@@ -2,9 +2,9 @@ import React from "react";
 import { SubmitProps } from "./../../interfaces";
 import _ from "lodash";
 
-const Button = ({ child, errors, isSubmitting }: SubmitProps) => {
+const Button = ({ child, isSubmitting }: SubmitProps) => {
   return React.cloneElement(child, {
-    disabled: isSubmitting || !_.isEmpty(errors),
+    disabled: isSubmitting,
   });
 };
 

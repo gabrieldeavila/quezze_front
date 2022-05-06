@@ -29,6 +29,8 @@
   "form": {
     "name": "Nome",
     "type": "Tipo",
-    "description": "Descrição"
-  }
+    "description": "Descrição",
+    "thumbnail": "Imagem"
+  },
+  "dropzone": "Arraste uma imagem ou clique aqui"
 }

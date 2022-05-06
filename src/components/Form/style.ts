@@ -31,7 +31,7 @@ export const InputWrapper = styled.div<InputWrapperProps>`
     ${(props) =>
       !props.removeBoxShadow &&
       `box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
-       border-radius: 8px;
+       border-radius: 5px;
       `};
   }
 
