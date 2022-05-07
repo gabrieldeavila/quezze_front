@@ -1,15 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Dropzone from "react-dropzone";
 import { DropzoneProps } from "./interface";
 import { DropzoneContainer, DropzoneWrapper } from "./style";
 import { useTranslation } from "react-i18next";
 import { AiOutlineEdit } from "react-icons/ai";
+import _ from "lodash";
 
 const Drop = (props: DropzoneProps) => {
   const { t } = useTranslation();
 
+  const [image, setImage] = useState("");
+
   useEffect(() => {
-    console.log(props.value);
+    if (!_.isEmpty(props.value?.[0])) {
+      setImage(URL.createObjectURL(props.value?.[0]));
+    }
   }, [props.value]);
 
   return (
@@ -20,6 +25,7 @@ const Drop = (props: DropzoneProps) => {
             <input {...getInputProps()} />
             <AiOutlineEdit />
             <p>{t("dropzone")}</p>
+            <img src={image} />
           </DropzoneContainer>
         </DropzoneWrapper>
       )}
