@@ -5,6 +5,7 @@ import _ from "lodash";
 import { FormWrapper, InputLabel, InputWrapper } from "./style";
 import { useTranslation } from "react-i18next";
 import FieldType from "./Fields/findType";
+import { handleErrors, handleInitialValues } from "./helpers";
 
 function Basic({
   errors,
@@ -27,24 +28,16 @@ function Basic({
 
 const Form = withFormik({
   // adicionando valores iniciais ao componente
-  mapPropsToValues: (prop: any) => {
-    let initialValues = {};
-
-    prop.children.forEach((child: any) => {
-      if (child.type === "input") {
-        initialValues = {
-          ...initialValues,
-          [child.props.name]: "",
-        };
-      }
-    });
+  mapPropsToValues: (prop: FormProps) => {
+    let initialValues = handleInitialValues(prop.children);
 
     return initialValues;
   },
 
   // validação dos campos
-  validate(values) {
-    const errors = {};
+  async validate(values, props: FormProps) {
+    let errors = await handleErrors(values, props);
+    console.log(errors);
     return errors;
   },
 

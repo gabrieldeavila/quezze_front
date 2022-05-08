@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Dropzone from "react-dropzone";
 import { DropzoneProps } from "./interface";
-import { DropzoneContainer, DropzoneWrapper } from "./style";
+import { DropImage, DropzoneContainer, DropzoneWrapper } from "./style";
 import { useTranslation } from "react-i18next";
 import { AiOutlineEdit } from "react-icons/ai";
 import _ from "lodash";
@@ -23,9 +23,14 @@ const Drop = (props: DropzoneProps) => {
         <DropzoneWrapper>
           <DropzoneContainer {...getRootProps()}>
             <input {...getInputProps()} />
-            <AiOutlineEdit />
-            <p>{t("dropzone")}</p>
-            <img src={image} />
+            {!image ? (
+              <>
+                <AiOutlineEdit />
+                <p>{t("dropzone")}</p>
+              </>
+            ) : (
+              <DropImage src={image} />
+            )}
           </DropzoneContainer>
         </DropzoneWrapper>
       )}

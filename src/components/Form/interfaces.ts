@@ -2,6 +2,9 @@ import { number } from "yup";
 
 export interface FormProps {
   submitText?: string;
+  schema: "create";
+  onSubmit: (values: any) => void;
+  children: JSX.Element[];
 }
 
 export interface InputWrapperProps {
@@ -44,4 +47,8 @@ export interface SelectProps {
 
 export interface TranslateSelectOptionsProps {
   options: SelectProps[];
+}
+
+export interface ValidateProps {
+  validate: (fields: object, arg2: object) => any;
 }

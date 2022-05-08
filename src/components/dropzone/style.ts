@@ -24,3 +24,10 @@ export const DropzoneContainer = styled.div`
     user-select: none;
   }
 `;
+
+export const DropImage = styled.img`
+  width: 90%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+`;

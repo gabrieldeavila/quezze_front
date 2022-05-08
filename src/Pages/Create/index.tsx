@@ -25,7 +25,7 @@ export default function Create() {
   return (
     <>
       <H1Light>{t("create.title")}</H1Light>
-      <Form>
+      <Form schema="create" onSubmit={() => console.log("mano")}>
         <input type="text" name="name" />
         <Select
           options={options}
