@@ -6,17 +6,17 @@ import { useTranslation } from "react-i18next";
 import { FieldsProps } from "../../interfaces";
 import { SelectStyle } from "./style";
 
-const Select = ({ name, child, values, setValues }: FieldsProps) => {
+const Select = ({
+  name,
+  child,
+  values,
+  setValues,
+  setFieldTouched,
+}: FieldsProps) => {
   const { t } = useTranslation();
 
-  let translate = child.props["data-translate"];
-  let options = child.props["data-options"];
-
-  let label = _.find(child.props.options, {
-    value: values[name as keyof typeof values],
-  })?.label;
-
   const onChange = (e: any) => {
+    setFieldTouched(name, true);
     setValues({ ...values, [name]: e.value });
   };
 

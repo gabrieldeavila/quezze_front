@@ -78,7 +78,7 @@ const validateField = async (
   // search for errors
   await validate.validate(field, { abortEarly: false }).catch((err: any) => {
     // if found any errors, add only the last
-    err.inner.forEach((e: any) => {
+    err.inner?.forEach((e: any) => {
       error = { [key]: e.message };
     });
   });

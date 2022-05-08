@@ -3,11 +3,18 @@ import { FieldsProps } from "../../interfaces";
 import { InputLabel, InputWrapper } from "../../style";
 import { useTranslation } from "react-i18next";
 
-const Input = ({ name, child, values, setValues }: FieldsProps) => {
+const Input = ({
+  name,
+  child,
+  values,
+  setValues,
+  setFieldTouched,
+}: FieldsProps) => {
   const { t } = useTranslation();
   const value = values[name as keyof typeof values];
 
   const onChange = (e: any) => {
+    setFieldTouched(name, true);
     setValues({ ...values, [name]: e.target.value });
   };
 

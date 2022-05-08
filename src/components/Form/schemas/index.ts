@@ -10,11 +10,11 @@ const create = yup.object({
     .required("required"),
   thumbnail: yup
     .mixed()
-    .test("fileSize", "File Size is too large", (value) => {
-      const sizeInBytes = 500000; //0.5MB
+    .test("fileSize", "file_large", (value) => {
+      const sizeInBytes = 5000000; //5MB
       return value[0].size <= sizeInBytes;
     })
-    .test("fileType", "Unsupported File Format", function (value) {
+    .test("fileType", "file_type", function (value) {
       const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png"];
       return SUPPORTED_FORMATS.includes(value[0].type);
     }),

@@ -13,10 +13,11 @@ const FieldType = ({
   setValues,
   values,
   isSubmitting,
+  setFieldTouched,
   errors,
 }: FieldTypeProps) => {
   let name = child.props.name;
-  let settings = { name, child, values, setValues };
+  let settings = { name, child, values, setValues, setFieldTouched };
 
   // quando for um input, clona o elemento e permite que salve o valor
   if (["input", "textarea"].includes(child.type)) {

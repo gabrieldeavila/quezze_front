@@ -32,5 +32,12 @@
     "description": "Descrição",
     "thumbnail": "Imagem"
   },
-  "dropzone": "Arraste uma imagem ou clique aqui"
+  "dropzone": "Arraste uma imagem ou clique aqui",
+  "yup_validation": {
+    "number": "Este campo deve ser um número",
+    "required": "Este campo é obrigatório",
+    "min_zero": "Este campo deve ser maior do que zero",
+    "file_large": "O arquivo é muito grande",
+    "file_type": "Este tipo de arquivo não é permitido"
+  }
 }

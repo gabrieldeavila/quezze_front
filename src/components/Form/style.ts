@@ -12,7 +12,7 @@ export const FormWrapper = styled.form<FormWrapperProps>`
   ${flex};
   ${marginPaddingWidth}
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.5rem;
 `;
 
 export const InputWrapper = styled.div<InputWrapperProps>`
@@ -53,4 +53,10 @@ export const InputLabel = styled.label<LabelProps>`
   background: ${light_black};
   margin-top: -15px;
   margin-left: 10px;
+`;
+
+export const ChildWrapper = styled.div`
+  ${flex};
+  flex-direction: column;
+  width: 100%;
 `;

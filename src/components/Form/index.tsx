@@ -2,25 +2,38 @@ import React from "react";
 import { withFormik } from "formik";
 import { FormProps } from "./interfaces";
 import _ from "lodash";
-import { FormWrapper, InputLabel, InputWrapper } from "./style";
+import { ChildWrapper, FormWrapper, InputLabel, InputWrapper } from "./style";
 import { useTranslation } from "react-i18next";
 import FieldType from "./Fields/findType";
 import { handleErrors, handleInitialValues } from "./helpers";
+import ValidateError from "./Fields/errors/index";
 
 function Basic({
   errors,
   handleSubmit,
   isSubmitting,
   values,
-  setFieldValue,
   setFieldTouched,
   children,
+  touched,
   setValues,
 }: any) {
   return (
     <FormWrapper mt="2" onSubmit={handleSubmit}>
       {children.map((child: any) => (
-        <FieldType {...{ child, setValues, values, isSubmitting, errors }} />
+        <ChildWrapper>
+          <FieldType
+            {...{
+              child,
+              setValues,
+              values,
+              isSubmitting,
+              errors,
+              setFieldTouched,
+            }}
+          />
+          <ValidateError touched={touched} errors={errors} child={child} />
+        </ChildWrapper>
       ))}
     </FormWrapper>
   );
@@ -37,17 +50,14 @@ const Form = withFormik({
   // validação dos campos
   async validate(values, props: FormProps) {
     let errors = await handleErrors(values, props);
-    console.log(errors);
+
     return errors;
   },
 
   // submissão dos valores
   handleSubmit(values, { props, setSubmitting }) {
-    console.log(values, props);
-
-    setTimeout(() => {
-      setSubmitting(false);
-    }, 400);
+    setSubmitting(true);
+    console.log(values);
   },
 })(Basic);
 

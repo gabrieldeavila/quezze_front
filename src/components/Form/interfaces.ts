@@ -24,6 +24,7 @@ export interface FieldTypeProps {
   setValues: (value: any) => void;
   values: {};
   isSubmitting: boolean;
+  setFieldTouched: (field: string, touched: boolean) => void;
   errors: {};
 }
 
@@ -31,7 +32,14 @@ export interface FieldsProps {
   name: string;
   child: JSX.Element;
   values: {};
+  setFieldTouched: (field: string, touched: boolean) => void;
   setValues: (value: any) => void;
+}
+
+export interface ErrorProps {
+  errors: {};
+  touched: {};
+  child: JSX.Element;
 }
 
 export interface SubmitProps {
