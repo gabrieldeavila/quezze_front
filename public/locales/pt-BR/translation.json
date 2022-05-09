@@ -30,6 +30,8 @@
     "name": "Nome",
     "type": "Tipo",
     "description": "Descrição",
+    "no_options": "Nenhuma Opção Encontrada",
+    "select": "Selecione...",
     "thumbnail": "Imagem"
   },
   "dropzone": "Arraste uma imagem ou clique aqui",

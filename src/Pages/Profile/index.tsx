@@ -10,7 +10,7 @@ export default function Profile() {
       <ProfilePic bigSize />
       <H1Light>John Doe</H1Light>
       <PDark>@john_doe</PDark>
-      <PLight mt="2" mb="4" width="30">
+      <PLight mt="2" mb="4" width="250px">
         Hi, folks! I'm John Doe! And I'm very happy boys.
       </PLight>
       <Swiper />

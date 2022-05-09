@@ -7,8 +7,10 @@ function ValidateError({ errors, touched, child }: ErrorProps) {
   const name = child.props.name;
   const error = errors[name as keyof typeof errors];
   const touchedError = touched[name as keyof typeof touched];
+
   const { t } = useTranslation();
-  const errMsg = t(`yup_validation.${error}`);
+  const text = `yup_validation.${error}`;
+  const errMsg = t(text);
 
   return (
     <ErrorWrapper>

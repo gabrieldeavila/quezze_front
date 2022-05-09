@@ -19,7 +19,7 @@ export const marginPaddingWidth = css`
   padding-right: ${(props: MarginPaddingWidthProps) => props.pr || "0"}rem;
   padding-top: ${(props: MarginPaddingWidthProps) => props.pt || "0"}rem;
   padding-bottom: ${(props: MarginPaddingWidthProps) => props.pb || "0"}rem;
-  width: ${(props: MarginPaddingWidthProps) => props.width || "auto"}%;
+  width: ${(props: MarginPaddingWidthProps) => props.width || "auto"};
   line-height: 1.5rem;
 `;
 

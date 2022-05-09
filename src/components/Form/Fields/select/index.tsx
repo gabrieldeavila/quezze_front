@@ -4,7 +4,7 @@ import { InputWrapper } from "../../style";
 import { InputLabel } from "./../../style";
 import { useTranslation } from "react-i18next";
 import { FieldsProps } from "../../interfaces";
-import { SelectStyle } from "./style";
+import { SelectStyle, NoOptionsMessage } from "./style";
 
 const Select = ({
   name,
@@ -21,6 +21,9 @@ const Select = ({
   };
 
   const styles = SelectStyle;
+  const components = { NoOptionsMessage };
+
+  const placeholder = t("form.select");
 
   return (
     <InputWrapper removeBoxShadow>
@@ -29,6 +32,8 @@ const Select = ({
       {React.cloneElement(child, {
         onChange,
         styles,
+        components,
+        placeholder,
       })}
     </InputWrapper>
   );

@@ -57,7 +57,7 @@ const Form = withFormik({
   // submissão dos valores
   handleSubmit(values, { props, setSubmitting }) {
     setSubmitting(true);
-    console.log(values);
+    props.onSubmit(values);
   },
 })(Basic);
 

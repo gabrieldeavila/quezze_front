@@ -1,4 +1,6 @@
 import { dark_grey, light_grey } from "../../../../assets/styled/base";
+import { components } from "react-select";
+import { t } from "i18next";
 
 export const SelectStyle = {
   control: (base = {}, state = {}) => ({
@@ -38,4 +40,12 @@ export const SelectStyle = {
     zIndex: 3,
     borderBottom: "1px dotted pink",
   }),
+};
+
+export const NoOptionsMessage = (props: any) => {
+  return (
+    <components.NoOptionsMessage {...props}>
+      <span>{t("form.no_options")}</span>
+    </components.NoOptionsMessage>
+  );
 };
