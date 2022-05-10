@@ -58,6 +58,7 @@ const Form = withFormik({
   handleSubmit(values, { props, setSubmitting }) {
     setSubmitting(true);
     props.onSubmit(values);
+    setSubmitting(false);
   },
 })(Basic);
 

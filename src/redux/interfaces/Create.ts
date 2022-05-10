@@ -1,6 +1,6 @@
-export interface Create {
+export interface CreateInterface {
   name: String;
-  type: String;
+  type: Number | String;
   description: String;
-  thumbnail?: String;
+  thumbnail?: String | File;
 }
