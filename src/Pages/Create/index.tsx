@@ -1,43 +1,22 @@
-import React, { useCallback, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
-import { Button, H1Light } from "../../assets/styled/base";
-import Form from "../../components/Form";
-import Select from "react-select";
-import { ex } from "./data_example";
-import { translateSelect } from "../../components/Form/Fields/select/translateSelect";
-import Drop from "../../components/dropzone";
-import { setCreate } from "./../../redux/effects/Create";
-import { CreateInterface } from "./../../redux/interfaces/Create";
+import { useSelector } from "react-redux";
+import { AppState } from "../../redux/store";
+import BasicInfo from "./BasicInfo";
+import { useEffect, useState } from "react";
+import { CreateProps } from "./../../redux/interfaces/Create";
+import _ from "lodash";
+import QuestionCreator from "./QuestionCreator";
 
 export default function Create() {
-  const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const posts: CreateProps = useSelector((state: AppState) => state.create);
 
-  const options = translateSelect({ options: ex }, "create.types");
+  const [showQuestions, setShowQuestions] = useState(false);
 
-  const handleSubmit = useCallback(
-    (values: CreateInterface) => {
-      dispatch(setCreate(values));
-    },
-    [dispatch]
-  );
+  useEffect(() => {
+    console.log(!_.isEmpty(posts.create.name));
+    if (!_.isEmpty(posts.create.name)) {
+      setShowQuestions(true);
+    }
+  }, [posts]);
 
-  return (
-    <>
-      <H1Light>{t("create.title")}</H1Light>
-      <Form schema="create" onSubmit={handleSubmit}>
-        <input type="text" name="name" />
-        <Select
-          options={options}
-          name="type"
-          data-translate="create"
-          data-options="types"
-        />
-        <textarea name="description"></textarea>
-        <Drop dropzone name="thumbnail" />
-        <Button type="submit">{t("create.button")}</Button>
-      </Form>
-    </>
-  );
+  return !showQuestions ? <BasicInfo /> : <QuestionCreator />;
 }

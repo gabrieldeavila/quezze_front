@@ -4,3 +4,7 @@ export interface CreateInterface {
   description: String;
   thumbnail?: String | File;
 }
+
+export interface CreateProps {
+  create: CreateInterface;
+}
