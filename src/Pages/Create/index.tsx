@@ -11,12 +11,9 @@ export default function Create() {
 
   const [showQuestions, setShowQuestions] = useState(false);
 
-  useEffect(() => {
-    console.log(!_.isEmpty(posts.create.name));
-    if (!_.isEmpty(posts.create.name)) {
-      setShowQuestions(true);
-    }
-  }, [posts]);
-
-  return !showQuestions ? <BasicInfo /> : <QuestionCreator />;
+  return !showQuestions ? (
+    <BasicInfo setShowQuestions={setShowQuestions} />
+  ) : (
+    <QuestionCreator />
+  );
 }
