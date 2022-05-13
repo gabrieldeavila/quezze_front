@@ -4,8 +4,14 @@ interface OptionsProps {
 }
 
 export interface QuestionInterface {
-  questionTitle: String;
+  title: String;
   options: OptionsProps[]; //OptionsProps[][5] tentar depois p/ limitar
   time: Number;
   image?: File;
+  id: String;
+}
+
+export interface setQuestionInterface {
+  questions: QuestionInterface[];
+  question: QuestionInterface;
 }
