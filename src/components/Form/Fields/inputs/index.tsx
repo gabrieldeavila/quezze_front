@@ -2,6 +2,7 @@ import React from "react";
 import { FieldsProps } from "../../interfaces";
 import { InputLabel, InputWrapper } from "../../style";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
 
 const Input = ({
   name,
@@ -9,12 +10,15 @@ const Input = ({
   values,
   setValues,
   setFieldTouched,
+  action,
 }: FieldsProps) => {
   const { t } = useTranslation();
   const value = values[name as keyof typeof values];
+  const dispatch = useDispatch();
 
   const onChange = (e: any) => {
     setFieldTouched(name, true);
+    dispatch(action({ ...values, [name]: e.target.value }));
     setValues({ ...values, [name]: e.target.value });
   };
 

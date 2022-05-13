@@ -5,6 +5,7 @@ import { InputLabel } from "./../../style";
 import { useTranslation } from "react-i18next";
 import { FieldsProps } from "../../interfaces";
 import { SelectStyle, NoOptionsMessage } from "./style";
+import { useDispatch } from "react-redux";
 
 const Select = ({
   name,
@@ -12,11 +13,14 @@ const Select = ({
   values,
   setValues,
   setFieldTouched,
+  action,
 }: FieldsProps) => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
 
   const onChange = (e: any) => {
     setFieldTouched(name, true);
+    dispatch(action({ ...values, [name]: e.value }));
     setValues({ ...values, [name]: e.value });
   };
 

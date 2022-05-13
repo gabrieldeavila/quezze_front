@@ -1,8 +1,8 @@
-import { number } from "yup";
-
 export interface FormProps {
   submitText?: string;
   schema: "create";
+  initialValues: {};
+  action: (values: any) => void;
   onSubmit: (values: any) => void;
   children: JSX.Element[];
 }
@@ -21,6 +21,7 @@ export interface LabelProps {
 
 export interface FieldTypeProps {
   child: JSX.Element;
+  action: (value: any) => void;
   setValues: (value: any) => void;
   values: {};
   isSubmitting: boolean;
@@ -34,6 +35,7 @@ export interface FieldsProps {
   values: {};
   setFieldTouched: (field: string, touched: boolean) => void;
   setValues: (value: any) => void;
+  action: (value: any) => void;
 }
 
 export interface ErrorProps {

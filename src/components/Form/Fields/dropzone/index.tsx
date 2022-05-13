@@ -2,6 +2,7 @@ import React from "react";
 import { FieldsProps } from "../../interfaces";
 import { InputLabel, InputWrapper } from "../../style";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
 
 const DropzoneClone = ({
   name,
@@ -9,13 +10,17 @@ const DropzoneClone = ({
   values,
   setValues,
   setFieldTouched,
+  action,
 }: FieldsProps) => {
   const { t } = useTranslation();
   const value = values[name as keyof typeof values];
+  const dispatch = useDispatch();
 
-  const onDrop = (acceptedFiles: any) => {
+  const onDrop = (file: any) => {
     setFieldTouched(name, true);
-    setValues({ ...values, [name]: acceptedFiles });
+
+    dispatch(action({ ...values, [name]: file }));
+    setValues({ ...values, [name]: file });
   };
 
   return (

@@ -5,8 +5,8 @@ import _ from "lodash";
 import { ChildWrapper, FormWrapper, InputLabel, InputWrapper } from "./style";
 import { useTranslation } from "react-i18next";
 import FieldType from "./Fields/findType";
-import { handleErrors, handleInitialValues } from "./helpers";
-import ValidateError from "./Fields/errors/index";
+import { handleErrors } from "./helpers";
+import ValidateError from "./errors/index";
 
 function Basic({
   errors,
@@ -17,6 +17,7 @@ function Basic({
   children,
   touched,
   setValues,
+  action,
 }: any) {
   return (
     <FormWrapper mt="2" onSubmit={handleSubmit}>
@@ -30,6 +31,7 @@ function Basic({
               isSubmitting,
               errors,
               setFieldTouched,
+              action,
             }}
           />
           <ValidateError touched={touched} errors={errors} child={child} />
@@ -41,9 +43,7 @@ function Basic({
 
 const Form = withFormik({
   // adicionando valores iniciais ao componente
-  mapPropsToValues: (prop: FormProps) => {
-    let initialValues = handleInitialValues(prop.children);
-
+  mapPropsToValues: ({ initialValues }: FormProps) => {
     return initialValues;
   },
 

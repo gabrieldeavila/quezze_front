@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
-import { red } from "../../../../assets/styled/base";
-import { flex } from "./../../../../assets/styled/mixins";
+import { red } from "../../../assets/styled/base";
+import { flex } from "../../../assets/styled/mixins";
 
 export const ErrorWrapper = styled.div`
   ${flex};

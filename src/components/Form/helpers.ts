@@ -1,29 +1,6 @@
-/**
- *
- * function to initialize the form
- *
- */
-
 import { ValidateProps } from "./interfaces";
 import schemas from "./schemas";
 import { FormProps } from "./interfaces";
-
-export const handleInitialValues = (children: JSX.Element[]) => {
-  let initialValues = {};
-
-  // add "" to all fields as default
-  children.forEach((child: any) => {
-    // prevents buttons from being added to initialValues
-    if (!child.props.name) return;
-
-    initialValues = {
-      ...initialValues,
-      [child.props.name]: "",
-    };
-  });
-
-  return initialValues;
-};
 
 /**
  *
@@ -76,7 +53,7 @@ const validateField = async (
   let error = {};
 
   // search for errors
-  await validate.validate(field, { abortEarly: false }).catch((err: any) => {
+  await validate?.validate(field, { abortEarly: false }).catch((err: any) => {
     // if found any errors, add only the last
     err.inner?.forEach((e: any) => {
       error = { [key]: e.message };

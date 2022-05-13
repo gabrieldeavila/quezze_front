@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { ErrorProps } from "./../../interfaces";
+import { ErrorProps } from "../interfaces";
 import { ErrorWrapper } from "./style";
 
 function ValidateError({ errors, touched, child }: ErrorProps) {
