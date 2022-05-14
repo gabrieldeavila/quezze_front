@@ -3,8 +3,12 @@ import { QuestionProps } from "./interface";
 import Form from "./../Form/index";
 import { setQuestion } from "./../../redux/effects/Questions";
 import Drop from "../dropzone";
+import { useTranslation } from "react-i18next";
+import { Button } from "./../../assets/styled/base";
 
 const Question = ({ data }: QuestionProps) => {
+  const { t } = useTranslation();
+
   const handleSubmit = () => {
     console.log("aaa");
   };
@@ -19,6 +23,8 @@ const Question = ({ data }: QuestionProps) => {
       <input type="text" name="title" />
       <input type="number" name="time" />
       <Drop dropzone name="image" />
+      <Button type="submit">{t("create.button")}</Button>
+      <Button type="submit">{t("create.button")}</Button>
     </Form>
   );
 };
