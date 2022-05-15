@@ -24,7 +24,7 @@ const Input = ({
 
   return (
     <InputWrapper>
-      <InputLabel for={name}>{t(`form.${name}`)}</InputLabel>
+      <InputLabel htmlFor={name}>{t(`form.${name}`)}</InputLabel>
 
       {/* Clona o elemento e adiciona valores de seleção */}
       {React.cloneElement(child, {

@@ -31,7 +31,7 @@ const Select = ({
 
   return (
     <InputWrapper removeBoxShadow>
-      <InputLabel for={name}>{t(`form.${name}`)}</InputLabel>
+      <InputLabel htmlFor={name}>{t(`form.${name}`)}</InputLabel>
 
       {React.cloneElement(child, {
         onChange,

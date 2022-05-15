@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components/macro";
 import { flex, H1config, marginPaddingWidth } from "./mixins";
-import { DivProps } from "./base_interfaces";
+import { DivProps, ButtonGroupProps } from "./base_interfaces";
 import { animated } from "react-spring";
 
 export const white = "#FFFFFF";
@@ -53,5 +53,14 @@ export const Button = styled.button`
 
   &:hover {
     transform: scale(1.05);
+  }
+`;
+
+export const ButtonGroup = styled.div<ButtonGroupProps>`
+  ${flex};
+  gap: 1rem;
+
+  ${Button} {
+    flex-grow: 1;
   }
 `;

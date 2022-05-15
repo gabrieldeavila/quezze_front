@@ -8,6 +8,7 @@ export const flex = css`
   flex-direction: ${(props: FlexProps) => props.direction || "row"};
   justify-content: ${(props: FlexProps) => props.justify || "center"};
   align-items: ${(props: FlexProps) => props.align || "center"};
+  flex-wrap: wrap;
 `;
 
 export const marginPaddingWidth = css`

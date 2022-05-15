@@ -5,7 +5,7 @@ import {
   marginPaddingWidth,
   Scrollbar,
 } from "../../assets/styled/mixins";
-import { FormWrapperProps, InputWrapperProps, LabelProps } from "./interfaces";
+import { FormWrapperProps, InputWrapperProps } from "./interfaces";
 import { white } from "./../../assets/styled/base";
 
 export const FormWrapper = styled.form<FormWrapperProps>`
@@ -41,7 +41,7 @@ export const InputWrapper = styled.div<InputWrapperProps>`
   }
 `;
 
-export const InputLabel = styled.label<LabelProps>`
+export const InputLabel = styled.label`
   font-weight: 600;
   width: fit-content;
   z-index: 2;

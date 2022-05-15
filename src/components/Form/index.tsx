@@ -21,8 +21,8 @@ function Basic({
 }: any) {
   return (
     <FormWrapper mt="2" onSubmit={handleSubmit}>
-      {children.map((child: any) => (
-        <ChildWrapper>
+      {children.map((child: any, key: number) => (
+        <ChildWrapper key={key}>
           <FieldType
             {...{
               child,

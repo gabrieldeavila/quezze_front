@@ -16,8 +16,8 @@ const QuestionsCreator = () => {
   return (
     <div>
       <H1Light>{name}</H1Light>
-      {questions.map((item) => (
-        <Question data={item} />
+      {questions.map((item, key) => (
+        <Question data={item} key={key} />
       ))}
     </div>
   );

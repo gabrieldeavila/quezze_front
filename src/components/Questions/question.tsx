@@ -4,7 +4,8 @@ import Form from "./../Form/index";
 import { setQuestion } from "./../../redux/effects/Questions";
 import Drop from "../dropzone";
 import { useTranslation } from "react-i18next";
-import { Button } from "./../../assets/styled/base";
+import { Button, ButtonGroup } from "./../../assets/styled/base";
+import Options from "./../options/index";
 
 const Question = ({ data }: QuestionProps) => {
   const { t } = useTranslation();
@@ -21,10 +22,17 @@ const Question = ({ data }: QuestionProps) => {
       onSubmit={handleSubmit}
     >
       <input type="text" name="title" />
+      <Options options name="options" />
       <input type="number" name="time" />
       <Drop dropzone name="image" />
-      <Button type="submit">{t("create.button")}</Button>
-      <Button type="submit">{t("create.button")}</Button>
+      <ButtonGroup buttonActions>
+        <Button className="inline" type="submit">
+          {t("create.add")}
+        </Button>
+        <Button className="inline" type="submit">
+          {t("create.ready")}
+        </Button>
+      </ButtonGroup>
     </Form>
   );
 };

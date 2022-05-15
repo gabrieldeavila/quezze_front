@@ -15,10 +15,6 @@ export interface FormWrapperProps {
   mt?: string;
 }
 
-export interface LabelProps {
-  for: string;
-}
-
 export interface FieldTypeProps {
   child: JSX.Element;
   action: (value: any) => void;

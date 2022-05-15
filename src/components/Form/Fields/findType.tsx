@@ -7,6 +7,8 @@ import Input from "./inputs";
 import Select from "./select";
 import Button from "./button";
 import DropzoneClone from "./dropzone";
+import ButtonsActions from "./buttonsActions/index";
+import OptionClone from "./options";
 
 const FieldType = ({
   child,
@@ -35,9 +37,18 @@ const FieldType = ({
     return <DropzoneClone {...settings} />;
   }
 
+  if (child.props?.isField) {
+    return <OptionClone {...settings} />;
+  }
+
   // elemento é um botão
   if (child.type?.target === "button") {
     return <Button {...{ isSubmitting, child, errors }} />;
+  }
+
+  // elemento é um conjunto de botões
+  if (child.props?.buttonActions) {
+    return <ButtonsActions {...{ isSubmitting, child, errors }} />;
   }
 
   // retorno default
