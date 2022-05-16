@@ -14,6 +14,7 @@ export const NavbarStyle = styled.nav<ProfilePicProps>`
   width: -webkit-fill-available;
   position: fixed;
   height: 64px;
+  flex-wrap: nowrap;
 `;
 
 export const NavbarLink = styled(Link)`
@@ -54,6 +55,7 @@ export const NavbarDiv = styled(Div)`
 `;
 
 export const NavbarInputWrapper = styled(Div)`
+  flex-wrap: nowrap;
   width: 40%;
   gap: 0;
 `;

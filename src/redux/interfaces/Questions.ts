@@ -1,11 +1,11 @@
-interface OptionsProps {
-  name: string;
-  rightAnswer: boolean;
+export interface OptionInterface {
+  label: string;
+  selected: boolean;
 }
 
 export interface QuestionInterface {
   title: String;
-  options: OptionsProps[]; //OptionsProps[][5] tentar depois p/ limitar
+  options: OptionInterface[];
   time: Number;
   image?: File;
   id: String;

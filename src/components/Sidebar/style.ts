@@ -19,6 +19,7 @@ export const SidebarAnimDiv = styled(AnimDiv)`
 `;
 
 export const SidebarWrapper = styled(Div)`
+  flex-wrap: nowrap;
   height: 100%;
   gap: 0;
 `;
@@ -37,6 +38,7 @@ export const SidebarLogo = styled(Div)`
 `;
 
 export const SidebarRoutes = styled(Div)`
+  flex-wrap: nowrap;
   width: 80%;
   height: -webkit-fill-available;
 `;

@@ -7,7 +7,19 @@ import { SET_QUESTIONS } from "./../types/QuestionsType";
 import _ from "lodash";
 
 const initialStateQuestions = [
-  { title: "", options: [], time: 0, image: undefined, id: _.uniqueId() },
+  {
+    title: "",
+    options: [
+      { label: "", selected: false },
+      { label: "", selected: false },
+      { label: "", selected: false },
+      { label: "", selected: false },
+      { label: "", selected: false },
+    ],
+    time: 0,
+    image: undefined,
+    id: _.uniqueId(),
+  },
 ];
 
 export const questionsReducer = (

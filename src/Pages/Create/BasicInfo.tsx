@@ -39,6 +39,7 @@ function BasicInfo({ setShowQuestions }: BasicInfoProps) {
         <Select
           options={options}
           name="type"
+          data-select={true}
           data-translate="create"
           data-options="types"
         />

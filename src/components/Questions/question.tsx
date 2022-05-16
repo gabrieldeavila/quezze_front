@@ -14,6 +14,10 @@ const Question = ({ data }: QuestionProps) => {
     console.log("aaa");
   };
 
+  const handleAddQuestion = () => {
+    console.log("adicionar questão, vamo ter que criar um redux aaaa");
+  };
+
   return (
     <Form
       initialValues={data}
@@ -22,11 +26,11 @@ const Question = ({ data }: QuestionProps) => {
       onSubmit={handleSubmit}
     >
       <input type="text" name="title" />
-      <Options options name="options" />
+      <Options data={data} optionsField name="options" />
       <input type="number" name="time" />
       <Drop dropzone name="image" />
       <ButtonGroup buttonActions>
-        <Button className="inline" type="submit">
+        <Button className="inline" onClick={handleAddQuestion} type="submit">
           {t("create.add")}
         </Button>
         <Button className="inline" type="submit">
