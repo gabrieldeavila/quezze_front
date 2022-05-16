@@ -1,26 +1,25 @@
 import { css } from "styled-components/macro";
 import type {} from "styled-components/cssprop";
 import { FlexProps, MarginPaddingWidthProps } from "./mixins_interfaces";
-import { dark_grey, light_grey } from "./base";
 
-export const flex = css`
+export const flex = css<FlexProps>`
   display: flex;
-  flex-direction: ${(props: FlexProps) => props.direction || "row"};
-  justify-content: ${(props: FlexProps) => props.justify || "center"};
-  align-items: ${(props: FlexProps) => props.align || "center"};
-  flex-wrap: wrap;
+  flex-direction: ${(props) => props.direction || "row"};
+  justify-content: ${(props) => props.justify || "center"};
+  align-items: ${(props) => props.align || "center"};
+  flex-wrap: ${(props) => props.wrap || "wrap"};
 `;
 
-export const marginPaddingWidth = css`
-  margin-top: ${(props: MarginPaddingWidthProps) => props.mt || "0"}rem;
-  margin-bottom: ${(props: MarginPaddingWidthProps) => props.mb || "0"}rem;
-  margin-left: ${(props: MarginPaddingWidthProps) => props.ml || "0"}rem;
-  margin-right: ${(props: MarginPaddingWidthProps) => props.mr || "0"}rem;
-  padding-left: ${(props: MarginPaddingWidthProps) => props.pl || "0"}rem;
-  padding-right: ${(props: MarginPaddingWidthProps) => props.pr || "0"}rem;
-  padding-top: ${(props: MarginPaddingWidthProps) => props.pt || "0"}rem;
-  padding-bottom: ${(props: MarginPaddingWidthProps) => props.pb || "0"}rem;
-  width: ${(props: MarginPaddingWidthProps) => props.width || "auto"};
+export const marginPaddingWidth = css<MarginPaddingWidthProps>`
+  margin-top: ${(props) => props.mt || "0"}rem;
+  margin-bottom: ${(props) => props.mb || "0"}rem;
+  margin-left: ${(props) => props.ml || "0"}rem;
+  margin-right: ${(props) => props.mr || "0"}rem;
+  padding-left: ${(props) => props.pl || "0"}rem;
+  padding-right: ${(props) => props.pr || "0"}rem;
+  padding-top: ${(props) => props.pt || "0"}rem;
+  padding-bottom: ${(props) => props.pb || "0"}rem;
+  width: ${(props) => props.width || "auto"};
   line-height: 1.5rem;
 `;
 

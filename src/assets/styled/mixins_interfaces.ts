@@ -2,6 +2,7 @@ export interface FlexProps {
   direction?: string;
   justify?: string;
   align?: string;
+  wrap?: string;
 }
 
 export interface MarginPaddingWidthProps {
