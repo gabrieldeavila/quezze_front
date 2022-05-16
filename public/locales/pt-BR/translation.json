@@ -10,6 +10,8 @@
   "create": {
     "title": "Criando o seu Quizz",
     "button": "Bora Criar!",
+    "add": "Adicionar Questão",
+    "ready": "Quizz pronto!",
     "types": {
       "cats": "Gatos",
       "dogs": "Cães",
@@ -29,10 +31,17 @@
   "form": {
     "name": "Nome",
     "type": "Tipo",
+    "title": "Título",
+    "options": "Opções",
+    "time": "Tempo (s)",
+    "image": "Imagem",
     "description": "Descrição",
     "no_options": "Nenhuma Opção Encontrada",
     "select": "Selecione...",
     "thumbnail": "Imagem"
+  },
+  "options": {
+    "placeholder": "Digite..."
   },
   "dropzone": "Arraste uma imagem ou clique aqui",
   "yup_validation": {
