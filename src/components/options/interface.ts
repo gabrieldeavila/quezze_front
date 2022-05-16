@@ -1,4 +1,17 @@
+import {
+  OptionInterface,
+  QuestionInterface,
+} from "./../../redux/interfaces/Questions";
+
 export interface OptionsProps {
-  options: boolean;
+  optionsField: boolean;
   name: string;
+  data: QuestionInterface;
+  onChange?: (x: object, y: number) => void;
+}
+
+export interface OptionProps {
+  onChange?: (x: object, y: number) => void;
+  option: OptionInterface;
+  index: number;
 }
