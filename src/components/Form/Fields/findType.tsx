@@ -27,18 +27,18 @@ const FieldType = ({
     return <Input {...settings} />;
   }
 
+  if (child.props?.optionsField) {
+    return <OptionClone {...settings} />;
+  }
+
   // quando elemento for do tipo ReactSelect
-  if (child.props?.options) {
+  if (child.props?.["data-select"]) {
     return <Select {...settings} />;
   }
 
   // elemento é um dropzone
   if (child.props?.dropzone) {
     return <DropzoneClone {...settings} />;
-  }
-
-  if (child.props?.isField) {
-    return <OptionClone {...settings} />;
   }
 
   // elemento é um botão
