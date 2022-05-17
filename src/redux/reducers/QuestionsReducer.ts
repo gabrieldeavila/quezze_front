@@ -2,7 +2,7 @@ import {
   QuestionInterface,
   setQuestionInterface,
 } from "../interfaces/Questions";
-import { QuestionsActionTypes } from "../types/QuestionsType";
+import { ADD_QUESTION, QuestionsActionTypes } from "../types/QuestionsType";
 import { SET_QUESTIONS } from "./../types/QuestionsType";
 import _ from "lodash";
 
@@ -29,6 +29,8 @@ export const questionsReducer = (
   switch (action.type) {
     case SET_QUESTIONS:
       return setQuestions(state, action.payload);
+    case ADD_QUESTION:
+      return [...state, action.payload];
     default:
       return state;
   }
