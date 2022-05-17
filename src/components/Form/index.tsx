@@ -34,7 +34,10 @@ function Basic({
               action,
             }}
           />
-          <ValidateError touched={touched} errors={errors} child={child} />
+
+          {!Object.keys(child.props).includes("buttonActions") && (
+            <ValidateError touched={touched} errors={errors} child={child} />
+          )}
         </ChildWrapper>
       ))}
     </FormWrapper>

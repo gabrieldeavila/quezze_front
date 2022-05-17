@@ -16,9 +16,11 @@ function OptionClone({
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
-  const onChange = (opt: OptionInterface, index: number) => {
-    let options: OptionInterface[] = [...values[name as keyof typeof values]];
-
+  const onChange = (
+    opt: OptionInterface,
+    index: number,
+    options: OptionInterface[]
+  ) => {
     if (opt.selected) {
       options = options.map((opt) => {
         return { ...opt, selected: false };
@@ -27,9 +29,9 @@ function OptionClone({
 
     options.splice(index, 1, opt);
 
+    setFieldTouched(name, true);
     dispatch(action({ ...values, [name]: options }));
     setValues({ ...values, [name]: options });
-    setFieldTouched(name, true);
   };
 
   return (
