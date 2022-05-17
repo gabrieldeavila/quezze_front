@@ -66,3 +66,9 @@ export const ButtonGroup = styled.div<ButtonGroupProps>`
     flex-grow: 1;
   }
 `;
+
+export const Slice = styled.div`
+  background: ${light_grey};
+  width: 100%;
+  height: 0.1rem;
+`;

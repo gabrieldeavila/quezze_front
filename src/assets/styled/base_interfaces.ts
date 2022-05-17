@@ -5,4 +5,5 @@ export interface DivProps {
 
 export interface ButtonGroupProps {
   buttonActions: Boolean;
+  children: JSX.Element | null;
 }
