@@ -7,11 +7,12 @@ export interface OptionsProps {
   optionsField: boolean;
   name: string;
   data: QuestionInterface;
-  onChange?: (x: object, y: number) => void;
+  onChange?: (x: object, y: number, z: OptionInterface[]) => void;
 }
 
 export interface OptionProps {
-  onChange?: (x: object, y: number) => void;
+  options: OptionInterface[];
+  onChange?: (x: object, y: number, z: OptionInterface[]) => void;
   option: OptionInterface;
   index: number;
 }

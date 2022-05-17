@@ -14,6 +14,7 @@ function Options(props: OptionsProps) {
     <OptionsWrapper>
       {props.data.options.map((opt, index) => (
         <Option
+          options={props.data.options}
           onChange={props.onChange}
           index={index}
           option={opt}
@@ -24,23 +25,21 @@ function Options(props: OptionsProps) {
   );
 }
 
-const Option = memo(
-  ({ option, onChange = (x, y) => {}, index }: OptionProps) => {
+// prettier-ignore
+const Option = memo(({options, option, onChange = (x, y, z) => {}, index }: OptionProps) => {
     const { t } = useTranslation();
 
-    // prettier-ignore
     const handleClick = useCallback((e) => {
       let updateValue = { ...option, selected: !option.selected };
-      onChange(updateValue, index);
-    }, [option]);
+      onChange(updateValue, index, options);
+    }, [option, options]);
 
-    // prettier-ignore
     const handleChange = useCallback((e) => {
       let val = e.target.value;
       let updateValue = { ...option, label: val } ;
       
-      onChange(updateValue, index);
-  }, [option, onChange, index]);
+      onChange(updateValue, index, options);
+    }, [option, options, onChange, index]);
 
     return (
       <OptionWrapper>
