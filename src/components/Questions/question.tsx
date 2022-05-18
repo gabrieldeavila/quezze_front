@@ -31,7 +31,7 @@ const Question = ({ data, last, position }: QuestionProps) => {
       <Form
         initialValues={data}
         action={setQuestion}
-        schema="create"
+        schema="question"
         onSubmit={handleSubmit}
       >
         <input type="text" name="title" />

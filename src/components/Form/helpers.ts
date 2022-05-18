@@ -14,6 +14,8 @@ export const handleErrors = async (values: {}, props: FormProps) => {
   const validateSchema = schemas[schema];
   let errors = {};
 
+  console.log(validateSchema?.fields);
+
   // promises are used to handle async validation
   let errorsPromise = new Promise((resolve) => {
     // foreach to search for errors

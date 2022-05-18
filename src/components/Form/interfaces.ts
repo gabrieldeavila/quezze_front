@@ -1,6 +1,6 @@
 export interface FormProps {
   submitText?: string;
-  schema: "create";
+  schema: "create" | "question";
   initialValues: {};
   action: (values: any) => void;
   onSubmit: (values: any) => void;

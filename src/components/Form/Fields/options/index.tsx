@@ -30,8 +30,17 @@ function OptionClone({
     options.splice(index, 1, opt);
 
     setFieldTouched(name, true);
-    dispatch(action({ ...values, [name]: options }));
-    setValues({ ...values, [name]: options });
+
+    setValues((oldVal: any) => {
+      return updateValues(oldVal, options);
+    });
+  };
+
+  const updateValues = (oldVal: any, options: any) => {
+    let valToSave = { ...oldVal, [name]: options };
+    dispatch(action(valToSave));
+
+    return valToSave;
   };
 
   return (
