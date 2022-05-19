@@ -1,7 +1,7 @@
 export interface FormProps {
   submitText?: string;
   schema: "create" | "question";
-  initialValues: {};
+  initialValues: any;
   action: (values: any) => void;
   onSubmit: (values: any) => void;
   children: JSX.Element[];
