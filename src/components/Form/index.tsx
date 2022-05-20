@@ -55,7 +55,6 @@ const Form = withFormik({
   // validação dos campos
   async validate(values, props: FormProps) {
     let errors = await handleErrors(values, props);
-    console.log(errors);
     return errors;
   },
 

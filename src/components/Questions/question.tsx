@@ -43,11 +43,7 @@ const Question = ({ data, last, position }: QuestionProps) => {
           <>
             {last && (
               <>
-                <Button
-                  className="inline"
-                  onClick={handleAddQuestion}
-                  type="submit"
-                >
+                <Button className="inline" onClick={handleAddQuestion}>
                   {t("create.add")}
                 </Button>
                 <Button className="inline" type="submit">
