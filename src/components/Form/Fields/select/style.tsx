@@ -33,7 +33,7 @@ export const SelectStyle = {
   }),
   dropdownIndicator: (base = {}, state = {}) => ({
     ...base,
-    color: "red",
+    color: dark_grey,
   }),
   menu: (provided = {}) => ({
     ...provided,
