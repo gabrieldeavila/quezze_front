@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { QuestionProps } from "./interface";
 import Form from "./../Form/index";
 import { addQuestion, setQuestion } from "./../../redux/effects/Questions";
@@ -11,15 +11,21 @@ import {
   Slice,
 } from "./../../assets/styled/base";
 import Options from "./../options/index";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { AppState } from "../../redux/store";
+import { CreateInterface } from "../../redux/interfaces/Create";
 
 const Question = ({ data, last, position }: QuestionProps) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const questions: [] = useSelector((state: AppState) => state.questions);
+  const create: CreateInterface = useSelector(
+    (state: AppState) => state.create
+  );
 
-  const handleSubmit = () => {
-    console.log("aaa");
-  };
+  const handleSubmit = useCallback(() => {
+    console.log(create, questions);
+  }, [questions, create]);
 
   const handleAddQuestion = () => {
     dispatch(addQuestion());
