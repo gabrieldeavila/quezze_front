@@ -9,6 +9,7 @@ import reset from "styled-reset";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
+  
   * {
     font-family: 'Montserrat', sans-serif !important
   }
