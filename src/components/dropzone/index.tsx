@@ -12,7 +12,8 @@ const Drop = (props: DropzoneProps) => {
   const [image, setImage] = useState("");
 
   useEffect(() => {
-    if (!_.isEmpty(props.value?.[0])) {
+    if (!_.isEmpty(props.value?.[0]) && !_.isUndefined(props.value?.[0])) {
+      // @ts-ignore
       setImage(URL.createObjectURL(props.value?.[0]));
     }
   }, [props.value]);

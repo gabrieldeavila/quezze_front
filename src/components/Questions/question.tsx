@@ -14,6 +14,8 @@ import Options from "./../options/index";
 import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../../redux/store";
 import { CreateInterface } from "../../redux/interfaces/Create";
+import { apiQuezze } from "./../../axios";
+import axios from "axios";
 
 const Question = ({ data, last, position }: QuestionProps) => {
   const { t } = useTranslation();
@@ -23,8 +25,13 @@ const Question = ({ data, last, position }: QuestionProps) => {
     (state: AppState) => state.create
   );
 
-  const handleSubmit = useCallback(() => {
-    console.log(create, questions);
+  const handleSubmit = useCallback(async () => {
+    await apiQuezze
+      .post("quezze", { create, questions })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
   }, [questions, create]);
 
   const handleAddQuestion = () => {
