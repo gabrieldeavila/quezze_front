@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { memo } from "react";
+import { memo, useEffect, useMemo, useState } from "react";
 // Import Swiper styles
 import "swiper/css";
 import {
@@ -10,50 +10,54 @@ import {
   SlideTitle,
 } from "./style";
 import { useWindowSize } from "react-use";
+import { SwiperInterface } from "./interface";
+import { apiQuezze } from "../../axios";
+import _ from "lodash";
+import { ex } from "../../Pages/Create/data_example";
+import { useTranslation } from "react-i18next";
 
-export default memo(function QuizSwiper() {
+const QuizSwiper = ({ value }: SwiperInterface) => {
   const { width } = useWindowSize();
+  const options = ex;
+  const [quiz, setQuiz] = useState<any>([]);
+
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    apiQuezze
+      .post("/get-quezze", { value })
+      .then((res) => {
+        setQuiz(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const category = useMemo(() => {
+    return _.find(options, { value })?.label;
+  }, []);
 
   return (
     <>
-      <QuizTitle>Category name</QuizTitle>
-      <QuizContainer spaceBetween={40} slidesPerView={width / 310}>
-        <SwiperSlide>
-          <SlideTitle>Título Teste</SlideTitle>
-          <SlideDescription>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim
-            eu vivamus in consequat. Tellus bibendum vel lectus lacus nulla in.
-          </SlideDescription>
-          <SlideButton>Play</SlideButton>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <SlideTitle>Título Teste 2</SlideTitle>
-          <SlideDescription>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim
-            eu vivamus in consequat. Tellus bibendum vel lectus lacus nulla in.
-          </SlideDescription>
-          <SlideButton>Play</SlideButton>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <SlideTitle>Título Teste 3</SlideTitle>
-          <SlideDescription>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim
-            eu vivamus in consequat. Tellus bibendum vel lectus lacus nulla in.
-          </SlideDescription>
-          <SlideButton>Play</SlideButton>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <SlideTitle>Título Teste 4</SlideTitle>
-          <SlideDescription>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi enim
-            eu vivamus in consequat. Tellus bibendum vel lectus lacus nulla in.
-          </SlideDescription>
-          <SlideButton>Play</SlideButton>
-        </SwiperSlide>
-      </QuizContainer>
+      {!_.isEmpty(quiz) && (
+        <>
+          <QuizTitle>{t(`create.types.${category}`)}</QuizTitle>
+          <QuizContainer spaceBetween={40} slidesPerView={width / 310}>
+            {quiz.map(({ create }: any, index: number) => (
+              <SwiperSlide>
+                <>
+                  <SlideTitle>{create.name}</SlideTitle>
+                  <SlideDescription>{create.description}</SlideDescription>
+                  <SlideButton>Play</SlideButton>
+                </>
+              </SwiperSlide>
+            ))}
+          </QuizContainer>
+        </>
+      )}
     </>
   );
-});
+};
+
+export default memo(QuizSwiper);

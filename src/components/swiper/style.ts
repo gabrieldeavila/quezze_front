@@ -1,11 +1,7 @@
 import styled from "styled-components/macro";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
 import { flex } from "../../assets/styled/mixins";
-import {
-  dark_black,
-  light_black,
-  light_grey,
-} from "./../../assets/styled/base";
+import { light_black, light_grey } from "./../../assets/styled/base";
 
 export const QuizContainer = styled(Swiper)`
   margin-right: 10rem;

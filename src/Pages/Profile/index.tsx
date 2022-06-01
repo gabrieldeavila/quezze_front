@@ -13,7 +13,7 @@ export default function Profile() {
       <PLight mt="2" mb="4" width="250px">
         Hi, folks! I'm John Doe! And I'm very happy boys.
       </PLight>
-      <Swiper />
+      {/* <Swiper /> */}
     </ProfileWrapper>
   );
 }

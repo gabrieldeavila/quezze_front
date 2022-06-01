@@ -26,6 +26,9 @@ const Question = ({ data, last, position }: QuestionProps) => {
   );
 
   const handleSubmit = useCallback(async () => {
+    console.log(questions);
+    return;
+    //
     await apiQuezze
       .post("quezze", { create, questions })
       .then((res) => {
