@@ -12,7 +12,6 @@ const QuestionsCreator = () => {
   const name = post.name;
 
   const questions: [] = useSelector((state: AppState) => state.questions);
-
   return (
     <div>
       <H1Light>{name}</H1Light>

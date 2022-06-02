@@ -47,8 +47,6 @@ function Basic({
 const Form = withFormik({
   // adicionando valores iniciais ao componente
   mapPropsToValues: ({ initialValues }: FormProps) => {
-    delete initialValues.id;
-
     return initialValues;
   },
 
