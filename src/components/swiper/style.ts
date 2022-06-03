@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import { Swiper } from "swiper/react";
 import { flex } from "../../assets/styled/mixins";
@@ -30,12 +31,14 @@ export const SlideDescription = styled.p`
   user-select: none;
 `;
 
-export const SlideButton = styled.button`
+export const SlideButton = styled(Link)`
   background: ${light_black};
   color: ${light_grey};
   border: none;
   font-size: 16px;
   border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
   font-weight: 800;
   padding: 0.5rem;
   width: calc(100% - 4rem);

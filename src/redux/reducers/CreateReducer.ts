@@ -2,7 +2,7 @@ import { CreateInterface } from "../interfaces/Create";
 import { CreateActionTypes } from "../types/CreateType";
 import { SET_CREATE } from "./../types/CreateType";
 
-const initialStateSetCreate = {
+export const initialStateSetCreate = {
   name: "",
   type: -1,
   description: "",

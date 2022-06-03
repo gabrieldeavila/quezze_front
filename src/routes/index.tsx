@@ -11,6 +11,7 @@ import Create from "../Pages/Create";
 
 const Home = lazy(() => import("../Pages/Home"));
 const Profile = lazy(() => import("../Pages/Profile"));
+const Play = lazy(() => import("../Pages/Play"));
 
 export default function RoutesWrapper() {
   const isMobile = useMobile();
@@ -26,6 +27,7 @@ export default function RoutesWrapper() {
             <Route path="/" element={<Home />} />
             <Route path="/create" element={<Create />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/play/:id" element={<Play />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </RoutesContainer>

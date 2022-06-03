@@ -15,6 +15,7 @@ import { apiQuezze } from "../../axios";
 import _ from "lodash";
 import { ex } from "../../Pages/Create/data_example";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const QuizSwiper = ({ value }: SwiperInterface) => {
   const { width } = useWindowSize();
@@ -44,12 +45,14 @@ const QuizSwiper = ({ value }: SwiperInterface) => {
         <>
           <QuizTitle>{t(`create.types.${category}`)}</QuizTitle>
           <QuizContainer spaceBetween={40} slidesPerView={width / 310}>
-            {quiz.map(({ create }: any, index: number) => (
+            {quiz.map(({ create, _id }: any, index: number) => (
               <SwiperSlide>
                 <>
                   <SlideTitle>{create.name}</SlideTitle>
                   <SlideDescription>{create.description}</SlideDescription>
-                  <SlideButton>Play</SlideButton>
+                  <SlideButton to={`/play/${_id}`}>
+                    {t("create.play")}
+                  </SlideButton>
                 </>
               </SwiperSlide>
             ))}
