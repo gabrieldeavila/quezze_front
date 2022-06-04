@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { H1Light } from "../../assets/styled/base";
+import { H1Light, PLight } from "../../assets/styled/base";
 import { apiQuezze } from "../../axios";
 import { QuestionInterface } from "../../redux/interfaces/Questions";
 import { initialStateSetCreate } from "../../redux/reducers/CreateReducer";
@@ -22,12 +22,13 @@ function Play() {
   }, []);
 
   useEffect(() => {
-    console.log({ questions, create });
+    console.log(create.thumbnail);
   }, [questions, create]);
 
   return (
     <div>
       <H1Light>{create.name}</H1Light>
+      <PLight>{create.description}</PLight>
     </div>
   );
 }
