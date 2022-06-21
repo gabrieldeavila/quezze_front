@@ -7,6 +7,11 @@
     "create": "Criar",
     "home": "Início"
   },
+  "play": {
+    "play": "Jogar",
+    "quizz": "Quizz",
+    "quizzes": "Quizzes"
+  },
   "create": {
     "play": "Jogar",
     "title": "Criando o seu Quizz",
