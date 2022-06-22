@@ -29,6 +29,24 @@
   "form": {
     "name": "Name",
     "type": "Type",
-    "description": "Description"
+    "title": "Title",
+    "options": "Options",
+    "time": "Time (s)",
+    "image": "Image",
+    "description": "Description",
+    "no_options": "No option found",
+    "select": "Select...",
+    "thumbnail": "Image"
+  },
+  "options": {
+    "placeholder": "Type here..."
+  },
+  "dropzone": "Drop an image here to upload",
+  "yup_validation": {
+    "number": "This field must be a number",
+    "required": "This field is required",
+    "min_zero": "This field must be greater than 0",
+    "file_large": "The file is too large",
+    "file_type": "This file type is not allowed"
   }
 }
