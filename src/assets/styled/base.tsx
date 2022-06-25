@@ -50,7 +50,7 @@ export const Button = styled.button`
   border-radius: 5px;
   padding: 1rem 5rem;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.25rem;
   transition: 0.25s ease-in-out;
 
   &:hover {
