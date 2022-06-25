@@ -48,7 +48,7 @@ export const Button = styled.button`
   background-color: ${light_grey};
   border: none;
   border-radius: 5px;
-  padding: 1rem 4rem;
+  padding: 1rem 5rem;
   cursor: pointer;
   font-size: 1rem;
   transition: 0.25s ease-in-out;
