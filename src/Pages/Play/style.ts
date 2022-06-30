@@ -10,5 +10,5 @@ export const PlayImg = styled.img`
 export const PlayWrapper = styled.div`
   ${flex}
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 `;
